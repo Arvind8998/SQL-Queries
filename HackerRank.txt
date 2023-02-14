@@ -1,0 +1,91 @@
+Q1.
+https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+SELECT * FROM CITY WHERE POPULATION >=100000 AND COUNTRYCODE = "USA";
+
+
+Q2.
+https://www.hackerrank.com/challenges/revising-the-select-query-2/problem?isFullScreen=true
+
+SELECT NAME FROM CITY WHERE POPULATION > 120000 AND COUNTRYCODE = "USA";
+
+Q3.
+https://www.hackerrank.com/challenges/select-all-sql/problem?isFullScreen=true
+
+
+Q4. 
+https://www.hackerrank.com/challenges/select-by-id/problem?isFullScreen=true
+SELECT * FROM CITY WHERE ID =1661;
+
+Q5.
+https://www.hackerrank.com/challenges/japanese-cities-attributes/problem?isFullScreen=true
+SELECT * FROM CITY WHERE COUNTRYCODE  = "JPN";
+
+Q6.
+https://www.hackerrank.com/challenges/japanese-cities-name?isFullScreen=true
+SELECT NAME FROM CITY WHERE COUNTRYCODE = "JPN";
+
+Q7.
+https://www.hackerrank.com/challenges/weather-observation-station-1/problem?isFullScreen=true
+SELECT CITY, STATE FROM STATION;
+
+Q8.
+https://www.hackerrank.com/challenges/weather-observation-station-3/problem?isFullScreen=true
+SELECT DISTINCT CITY FROM STATION WHERE ID%2=0; 
+
+Q9.
+https://www.hackerrank.com/challenges/weather-observation-station-4/problem?isFullScreen=true
+SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION;
+
+Q10.
+https://www.hackerrank.com/challenges/weather-observation-station-5/problem?isFullScreen=true
+
+SELECT CITY, LENGTH(CITY) FROM STATION 
+WHERE CITY = (
+    SELECT CITY FROM STATION WHERE LENGTH(CITY) = (SELECT MIN(LENGTH(CITY)) FROM STATION ) ORDER BY CITY ASC LIMIT 1
+)
+OR CITY = ( SELECT  CITY FROM STATION WHERE LENGTH(CITY) = (SELECT MAX(LENGTH(CITY)) FROM STATION ) ORDER BY CITY ASC LIMIT 1 );
+
+
+Q11.
+https://www.hackerrank.com/challenges/weather-observation-station-6/problem?isFullScreen=true
+
+SELECT DISTINCT CITY FROM STATION WHERE LOWER(SUBSTR(CITY, 1, 1)) IN('a', 'e', 'i', 'o', 'u'); 
+
+Q12.
+https://www.hackerrank.com/challenges/weather-observation-station-7/problem?isFullScreen=true
+
+SELECT DISTINCT CITY FROM STATION WHERE LOWER(SUBSTR( CITY, LENGTH(CITY), 1)) IN  ( 'a', 'e', 'i', 'o', 'u');
+
+Q13.
+https://www.hackerrank.com/challenges/weather-observation-station-8/problem?isFullScreen=true
+
+SELECT DISTINCT CITY FROM STATION WHERE LOWER(SUBSTR( CITY, LENGTH(CITY), 1)) IN  ( 'a', 'e', 'i', 'o', 'u') AND LOWER(SUBSTR(CITY, 1, 1)) IN('a', 'e', 'i', 'o', 'u');
+
+Q14.
+https://www.hackerrank.com/challenges/weather-observation-station-9/problem?isFullScreen=true
+
+SELECT DISTINCT CITY FROM STATION WHERE LOWER(SUBSTR(CITY, 1, 1)) NOT IN ('a', 'e', 'i', 'o', 'u') ;
+
+Q15.
+https://www.hackerrank.com/challenges/weather-observation-station-10/problem?isFullScreen=true
+
+SELECT DISTINCT CITY FROM STATION WHERE LOWER(SUBSTRING(CITY, LENGTH(CITY), 1)) NOT IN ('a', 'e', 'i', 'o', 'u');
+
+Q16.
+https://www.hackerrank.com/challenges/weather-observation-station-11/problem?isFullScreen=true
+
+SELECT DISTINCT CITY FROM STATION WHERE LOWER(SUBSTRING(CITY, 1, 1)) NOT IN ('a', 'e', 'i', 'o', 'u') OR LOWER(SUBSTRING(CITY, LENGTH(CITY), 1)) NOT IN ('a', 'e', 'i', 'o', 'u');
+
+Q17.
+https://www.hackerrank.com/challenges/weather-observation-station-12/problem?isFullScreen=true
+
+SELECT DISTINCT CITY FROM STATION WHERE LOWER(SUBSTRING(CITY, 1, 1)) NOT IN ('a', 'e', 'i', 'o', 'u') AND LOWER(SUBSTRING(CITY, LENGTH(CITY), 1) NOT IN ('a', 'e', 'i', 'o', 'u')) ;
+
+Q18.
+https://www.hackerrank.com/challenges/more-than-75-marks/problem?isFullScreen=true
+
+
+
+
+
